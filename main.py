@@ -24,10 +24,8 @@ def check(a, b, anwser):
     else:
         correct = "b"
     
-    if anwser.lower() == correct:
-        return True
-    else:
-        return False
+    return anwser.lower() == correct
+  
 
 def print_info(account):
     '''
