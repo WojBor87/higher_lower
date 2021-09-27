@@ -29,16 +29,16 @@ def check(a, b, anwser):
     else:
         return False
 
-def print_info(item):
+def print_info(account):
     '''
-    Function prints information about item.
+    Takes the account data and return the printable format
     '''
-    return f"{item['name']}, a {item['description']} form {item['country']}"
+    return f"{account['name']}, a {account['description']} form {account['country']}"
 
 again = True
 while again:
     score = 0
-    item1 = choose_data()
+    account1 = choose_data()
     next_turn = True
 
     while next_turn:
@@ -46,15 +46,15 @@ while again:
         print(logo)
         if score > 0:
             print(f"You're right! Current score {score}")
-        print(f"Compare A: " + print_info(item1))
+        print(f"Compare A: " + print_info(account1))
         print(vs)
-        item2 = choose_data(item1)
-        print(f"Against B: " + print_info(item2))
+        account2 = choose_data(account1)
+        print(f"Against B: " + print_info(account2))
         anwser = input("Who has more followers? Type 'A' or 'B': ")
-        if check(item1, item2, anwser):
+        if check(account1, account2, anwser):
             score += 1
             print(score)
-            item1 = item2
+            item1 = account2
         else:
             clear()
             print(logo)
